@@ -1,2 +1,15 @@
+@mixin containerFlex {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
 .Content {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.DrinkList {
+	@include containerFlex();
 }

@@ -18,15 +18,18 @@ const Content = ({ category }) => {
 
 	const listData = listFilter(drinkList, "strCategory", category);
 
-	useEffect(() => {
-		ingrListCreate(listData);
-	});
+	// useEffect(() => {
+	// 	ingrListCreate(listData);
+	// });
 
 	return (
 		<div className="Content">
-			{listData.map((drink) => (
-				<Card data={drink} />
-			))}
+			<h1>{category}</h1>
+			<div className="DrinkList">
+				{listData.map((drink) => (
+					<Card data={drink} />
+				))}
+			</div>
 		</div>
 	);
 };

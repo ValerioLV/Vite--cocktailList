@@ -1,2 +1,37 @@
+$photo-size_width-normal: 350px;
+$photo-size_height-normal: 300px;
+
 .Card {
+	max-width: 500px;
+	border: 2px solid black;
+	display: flex;
+	flex-direction: column;
+
+	h3 {
+		text-align: center;
+		font-size: 2.3rem;
+		margin: 5px 0;
+	}
+
+	img {
+		width: $photo-size_width-normal;
+		height: $photo-size_height-normal;
+		align-self: center;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+		display: flex;
+		gap: 20px;
+	}
+}
+
+.Card__details {
+	padding: 5px 10px 0;
+
+	ul,
+	p {
+		margin-bottom: 5px;
+	}
 }
