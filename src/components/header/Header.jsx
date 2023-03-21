@@ -14,6 +14,7 @@ const Header = ({ setCategory }) => {
 			</nav>
 
 			<Hero setCategory={setCategory} />
+			<hr />
 		</div>
 	);
 };

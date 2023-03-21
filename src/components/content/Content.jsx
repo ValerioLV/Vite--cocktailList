@@ -4,7 +4,7 @@ import { GET } from "../../utils/get";
 import { ingrListCreate } from "../../utils/func";
 import Card from "../card";
 
-const Content = ({ category }) => {
+const Content = ({ category, setModalSettings }) => {
 	const [drinkList, setDrinkList] = useState([]);
 
 	useEffect(() => {
@@ -27,7 +27,10 @@ const Content = ({ category }) => {
 			<h1>{category}</h1>
 			<div className="DrinkList">
 				{listData.map((drink) => (
-					<Card data={drink} />
+					<Card
+						data={drink}
+						setModalSettings={setModalSettings}
+					/>
 				))}
 			</div>
 		</div>

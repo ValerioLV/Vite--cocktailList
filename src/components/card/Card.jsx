@@ -1,12 +1,19 @@
 import "./index.scss";
 
-const Card = ({ data }) => {
+const Card = ({ data, setModalSettings }) => {
+	// const onHandleImgClick = () => {
+	// 	setModalSettings((prev) => (
+	// 		console.log()
+	// 		{ ...prev, isVisible: true, modalData: data }));
+	// };
+
 	return (
 		<div className="Card">
 			<h3>{data.strDrink}</h3>
 			<img
 				src={data.strDrinkThumb}
 				alt={data.strDrink}
+				// onClick={() => onHandleImgClick()}
 			/>
 			<div className="Card__details">
 				<ul>

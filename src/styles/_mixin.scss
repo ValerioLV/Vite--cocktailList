@@ -1,0 +1,14 @@
+@mixin flexContainer(
+	$flex-direction: row,
+	$justify: flex-start,
+	$gap: 0px,
+	$wrap: nowrap,
+	$align: flex-start
+) {
+	display: flex;
+	flex-direction: $flex-direction;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+	flex-wrap: $wrap;
+}

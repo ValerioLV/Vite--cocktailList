@@ -1,14 +1,12 @@
-$photo-size_width-normal: 350px;
-$photo-size_height-normal: 300px;
+@import "../../styles/variables";
+@import "../../styles/mixin";
 
 .Card {
-	max-width: 500px;
-	border: 2px solid black;
-	display: flex;
-	flex-direction: column;
+	max-width: 450px;
+	@include flexContainer(column, center);
 
 	h3 {
-		text-align: center;
+		align-self: center;
 		font-size: 2.3rem;
 		margin: 5px 0;
 	}
@@ -23,15 +21,18 @@ $photo-size_height-normal: 300px;
 		padding: 0;
 		list-style: none;
 		display: flex;
-		gap: 20px;
+		gap: 15px;
 	}
 }
 
 .Card__details {
-	padding: 5px 10px 0;
+	padding: 3px 5px 0;
+	border: 1px solid $secondary-color;
+	border-radius: 5px;
 
 	ul,
 	p {
+		margin-top: 8px;
 		margin-bottom: 5px;
 	}
 }

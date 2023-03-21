@@ -1,2 +1,53 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
 .Header {
+	color: $tertiary-color;
+	background-color: $primary-color;
+	padding-bottom: 2px;
+
+	hr {
+		width: 85%;
+		border: 0;
+		border-bottom: 1px dotted $secondary-color;
+		border-width: 4px;
+	}
+
+	hr:nth-child(3) {
+		width: 95%;
+		border-bottom: 1px solid $secondary-color;
+	}
+
+	&__nav {
+		display: flex;
+
+		ul {
+			padding: 0;
+			width: 100%;
+			list-style: none;
+			@include flexContainer(row, space-around, center);
+		}
+	}
+
+	.Hero {
+		h1 {
+			text-align: center;
+		}
+
+		&__filter__list {
+			padding: 0;
+			list-style: none;
+			@include flexContainer(row, space-evenly);
+
+			& li {
+				padding: 2px;
+
+				&:hover {
+					transition: all 0.5s;
+					background-color: $secondary-color;
+					cursor: pointer;
+				}
+			}
+		}
+	}
 }
