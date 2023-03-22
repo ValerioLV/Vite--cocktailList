@@ -1,12 +1,30 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
-const DrinkModal = ({ modalSettings }) => {
+const DrinkModal = ({ modalSettings, setModalSettings }) => {
+	const CloseModale = () => {
+		setModalSettings((prev) => ({ ...prev, isVisible: false }));
+		console.log(modalSettings.isVisible);
+	};
+
 	return (
-		<div className="DrinkModal">
-			<div className="DrinkModal__info"></div>
-			<div className="DrinkModal__photo">
+		<div className={styles.DrinkModal}>
+			<div className={styles.info}>
+				<h1>Nome: {modalSettings.modalData.strDrink}</h1>
+				<p>Tipo: {modalSettings.modalData.strCategory}</p>
+				<p>Bicchiere: {modalSettings.modalData.strGlass}</p>
+				<p>
+					Istruzioni: <br />
+					{modalSettings.modalData.strInstructionsIT}
+				</p>
+			</div>
+			<button
+				className={styles.closeBtn}
+				onClick={CloseModale}>
+				x
+			</button>
+			<div className={styles.photo}>
 				<img
-					src={modalSettings.modalData.strThumb}
+					src={modalSettings.modalData.strDrinkThumb}
 					alt="Foto drink"
 				/>
 			</div>

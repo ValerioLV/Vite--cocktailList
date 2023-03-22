@@ -15,11 +15,18 @@ function App() {
 	return (
 		<div className="App">
 			<Header setCategory={setCategory} />
-			<Content
-				category={category}
-				setModalSettings={setModalSettings}
-			/>
-			{modalSettings.isVisible ? <DrinkModal /> : null}
+
+			{modalSettings.isVisible ? (
+				<DrinkModal
+					modalSettings={modalSettings}
+					setModalSettings={setModalSettings}
+				/>
+			) : (
+				<Content
+					category={category}
+					setModalSettings={setModalSettings}
+				/>
+			)}
 			<Footer />
 		</div>
 	);

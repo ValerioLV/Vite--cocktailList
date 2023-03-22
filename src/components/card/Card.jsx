@@ -1,11 +1,10 @@
 import styles from "./index.module.scss";
 
 const Card = ({ data, setModalSettings }) => {
-	// const onHandleImgClick = () => {
-	// 	setModalSettings((prev) => (
-	// 		console.log()
-	// 		{ ...prev, isVisible: true, modalData: data }));
-	// };
+	const onHandleImgClick = () => {
+		setModalSettings((prev) => ({ ...prev, isVisible: true, modalData: data }));
+		console.log(data);
+	};
 
 	return (
 		<div className={styles.Card}>
@@ -13,7 +12,7 @@ const Card = ({ data, setModalSettings }) => {
 			<img
 				src={data.strDrinkThumb}
 				alt={data.strDrink}
-				// onClick={() => onHandleImgClick()}
+				onClick={onHandleImgClick}
 			/>
 			<div className={styles.details}>
 				<ul>
