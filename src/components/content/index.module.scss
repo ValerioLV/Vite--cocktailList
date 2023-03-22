@@ -1,0 +1,18 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.Content {
+	padding: 0 5px 10px;
+	color: $tertiary-color;
+	background-color: $primary-color;
+	margin-bottom: 190px;
+
+	h1 {
+		text-align: center;
+		font-size: 3rem;
+	}
+
+	.drinkList {
+		@include flexContainer(row, space-around, 10px, wrap);
+	}
+}

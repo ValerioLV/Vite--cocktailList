@@ -1,10 +1,10 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 import Hero from "../hero";
 
 const Header = ({ setCategory }) => {
 	return (
-		<div className="Header">
-			<nav className="Header__nav">
+		<div className={styles.Header}>
+			<nav className={styles.nav}>
 				<ul>
 					<li>Home</li>
 					<li>Contact us</li>

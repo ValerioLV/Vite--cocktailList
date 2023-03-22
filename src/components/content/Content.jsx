@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 import { useState, useEffect } from "react";
 import { GET } from "../../utils/get";
 import { ingrListCreate } from "../../utils/func";
@@ -23,9 +23,9 @@ const Content = ({ category, setModalSettings }) => {
 	// });
 
 	return (
-		<div className="Content">
+		<div className={styles.Content}>
 			<h1>{category}</h1>
-			<div className="DrinkList">
+			<div className={styles.drinkList}>
 				{listData.map((drink) => (
 					<Card
 						data={drink}

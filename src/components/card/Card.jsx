@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Card = ({ data, setModalSettings }) => {
 	// const onHandleImgClick = () => {
@@ -8,14 +8,14 @@ const Card = ({ data, setModalSettings }) => {
 	// };
 
 	return (
-		<div className="Card">
+		<div className={styles.Card}>
 			<h3>{data.strDrink}</h3>
 			<img
 				src={data.strDrinkThumb}
 				alt={data.strDrink}
 				// onClick={() => onHandleImgClick()}
 			/>
-			<div className="Card__details">
+			<div className={styles.details}>
 				<ul>
 					{data.strIngredient1 ? <li>{data.strIngredient1}</li> : null}
 					{data.strIngredient2 ? <li>{data.strIngredient2}</li> : null}

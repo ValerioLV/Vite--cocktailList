@@ -1,0 +1,24 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.Hero {
+	h1 {
+		text-align: center;
+	}
+
+	.filter__list {
+		padding: 0;
+		list-style: none;
+		@include flexContainer(row, space-evenly);
+
+		& li {
+			padding: 2px;
+
+			&:hover {
+				transition: all 0.5s;
+				background-color: $secondary-color;
+				cursor: pointer;
+			}
+		}
+	}
+}
