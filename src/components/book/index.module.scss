@@ -1,0 +1,34 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.Book {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	z-index: 1;
+
+	.overlay {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	.bookContent {
+		position: fixed;
+		width: 500px;
+		height: 400px;
+		left: calc(50% - 200px);
+		top: calc(50% - 250px);
+		z-index: 2;
+		background-color: $secondary-color;
+		@include flexContainer(row, center, 10px);
+
+		button {
+			position: absolute;
+			left: 0;
+			z-index: 2;
+		}
+	}
+}

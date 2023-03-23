@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import Hero from "../hero";
 
-const Header = ({ setCategory }) => {
+const Header = ({ setCategory, setBookVisible }) => {
 	return (
 		<div className={styles.Header}>
 			<nav className={styles.nav}>
@@ -11,6 +11,13 @@ const Header = ({ setCategory }) => {
 					<li>About us</li>
 					<li>FAQ</li>
 				</ul>
+				<div className={styles.bookBtn}>
+					<input
+						type="button"
+						value="Prenota!"
+						onClick={() => setBookVisible(true)}
+					/>
+				</div>
 			</nav>
 
 			<Hero setCategory={setCategory} />

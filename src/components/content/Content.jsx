@@ -30,6 +30,7 @@ const Content = ({ category, setModalSettings }) => {
 					<Card
 						data={drink}
 						setModalSettings={setModalSettings}
+						key={Math.random()}
 					/>
 				))}
 			</div>

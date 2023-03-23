@@ -1,0 +1,12 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.Popup {
+	border: 2px solid red;
+	width: 250px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 125px);
+	background-color: $secondary-color;
+}

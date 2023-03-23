@@ -4,9 +4,16 @@ import Header from "./components/header";
 import Content from "./components/content";
 import Footer from "./components/footer";
 import DrinkModal from "./components/drinkModal";
+import Book from "./components/book";
+import Popup from "./components/popup";
 
 function App() {
 	const [category, setCategory] = useState("Cocktail");
+	const [bookVisible, setBookVisible] = useState(false);
+	const [popupSettings, setPopupSettings] = useState({
+		isVisible: false,
+		popupData: {},
+	});
 	const [modalSettings, setModalSettings] = useState({
 		isVisible: false,
 		modalData: {},
@@ -14,7 +21,10 @@ function App() {
 
 	return (
 		<div className="App">
-			<Header setCategory={setCategory} />
+			<Header
+				setCategory={setCategory}
+				setBookVisible={setBookVisible}
+			/>
 
 			{modalSettings.isVisible ? (
 				<DrinkModal
@@ -25,6 +35,18 @@ function App() {
 				<Content
 					category={category}
 					setModalSettings={setModalSettings}
+				/>
+			)}
+			{bookVisible && (
+				<Book
+					setBookVisible={setBookVisible}
+					setPopupSettings={setPopupSettings}
+				/>
+			)}
+			{popupSettings.isVisible && (
+				<Popup
+					setPopupSettings={setPopupSettings}
+					popupSettings={popupSettings}
 				/>
 			)}
 			<Footer />
