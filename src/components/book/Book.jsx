@@ -12,7 +12,6 @@ const Book = ({ setBookVisible, setPopupSettings }) => {
 			setDrinkList((prev) => [...prev, drinks]);
 		});
 	}, []);
-	console.log(drinkList);
 
 	const onInputName = (e) => {
 		setBookName(e.target.value);

@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import { useState, useEffect } from "react";
 import { GET } from "../../utils/get";
-import { ingrListCreate } from "../../utils/func";
+// import { ingrListCreate } from "../../utils/func";
 import Card from "../card";
 
 const Content = ({ category, setModalSettings }) => {

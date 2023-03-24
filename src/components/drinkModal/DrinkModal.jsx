@@ -3,7 +3,6 @@ import styles from "./index.module.scss";
 const DrinkModal = ({ modalSettings, setModalSettings }) => {
 	const CloseModale = () => {
 		setModalSettings((prev) => ({ ...prev, isVisible: false }));
-		console.log(modalSettings.isVisible);
 	};
 
 	return (

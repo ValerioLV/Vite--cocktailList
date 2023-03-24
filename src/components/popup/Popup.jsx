@@ -1,9 +1,12 @@
+import { useEffect } from "react";
 import styles from "./index.module.scss";
 
 const Popup = ({ setPopupSettings, popupSettings }) => {
-	setTimeout(() => {
-		setPopupSettings((prev) => ({ ...prev, isVisible: false }));
-	}, 1380);
+	useEffect(() => {
+		setTimeout(() => {
+			setPopupSettings((prev) => ({ ...prev, isVisible: false }));
+		}, 1380);
+	}, []);
 
 	return (
 		<div className={styles.Popup}>

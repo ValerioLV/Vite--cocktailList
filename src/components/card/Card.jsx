@@ -1,10 +1,12 @@
 import styles from "./index.module.scss";
+import ingrListCreate from "../../utils/func";
 
 const Card = ({ data, setModalSettings }) => {
 	const onHandleImgClick = () => {
 		setModalSettings((prev) => ({ ...prev, isVisible: true, modalData: data }));
-		console.log(data);
 	};
+
+	const ingredientList = () => ingrListCreate(data);
 
 	return (
 		<div className={styles.Card}>
@@ -16,14 +18,9 @@ const Card = ({ data, setModalSettings }) => {
 			/>
 			<div className={styles.details}>
 				<ul>
-					{data.strIngredient1 ? <li>{data.strIngredient1}</li> : null}
-					{data.strIngredient2 ? <li>{data.strIngredient2}</li> : null}
-					{data.strIngredient3 ? <li>{data.strIngredient3}</li> : null}
-					{data.strIngredient4 ? <li>{data.strIngredient4}</li> : null}
-					{data.strIngredient5 ? <li>{data.strIngredient5}</li> : null}
-					{data.strIngredient6 ? <li>{data.strIngredient6}</li> : null}
-					{data.strIngredient7 ? <li>{data.strIngredient7}</li> : null}
-					{data.strIngredient8 ? <li>{data.strIngredient8}</li> : null}
+					{ingredientList().map((ingredient) => (
+						<li>{ingredient}</li>
+					))}
 				</ul>
 				<p>{data.strInstructionsIT}</p>
 			</div>
