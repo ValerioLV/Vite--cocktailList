@@ -17,13 +17,50 @@
 
 	.bookContent {
 		position: fixed;
-		width: 500px;
-		height: 400px;
-		left: calc(50% - 200px);
+		width: 600px;
+		height: 500px;
+		left: calc(50% - 300px);
 		top: calc(50% - 250px);
 		z-index: 2;
 		background-color: $secondary-color;
 		@include flexContainer(row, center, 10px);
+
+		.form {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+
+			.textInput {
+				display: flex;
+				justify-content: space-evenly;
+			}
+
+			.btnInput {
+				display: flex;
+				flex-wrap: wrap;
+
+				div {
+					width: 200px;
+					height: 130px;
+					h4 {
+						margin: 5px 0;
+					}
+				}
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					max-height: 60px;
+					overflow-y: scroll;
+				}
+			}
+
+			.bookBtn {
+				position: absolute;
+				right: 0;
+				z-index: 2;
+			}
+		}
 
 		button {
 			position: absolute;

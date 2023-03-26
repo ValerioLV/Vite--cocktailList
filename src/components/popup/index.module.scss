@@ -2,11 +2,14 @@
 @import "../../styles/variables";
 
 .Popup {
-	border: 2px solid red;
+	border: 1px solid $primary-color;
 	width: 250px;
-	height: 300px;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: calc(50% - 125px);
 	background-color: $secondary-color;
+
+	p {
+		margin: 5px;
+	}
 }

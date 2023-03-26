@@ -11,8 +11,8 @@ const Popup = ({ setPopupSettings, popupSettings }) => {
 	return (
 		<div className={styles.Popup}>
 			<p>
-				Hai prenotato al nome di {popupSettings.popupData.nome} alla data{" "}
-				{popupSettings.popupData.date}
+				Hai prenotato un {popupSettings.popupData.drink} al nome di{" "}
+				{popupSettings.popupData.nome} alla data {popupSettings.popupData.date}
 			</p>
 		</div>
 	);

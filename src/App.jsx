@@ -1,5 +1,6 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { GET } from "./utils/get";
 import Header from "./components/header";
 import Content from "./components/content";
 import Footer from "./components/footer";
@@ -9,6 +10,8 @@ import Popup from "./components/popup";
 
 function App() {
 	const [category, setCategory] = useState("Cocktail");
+	const [drinkList, setDrinkList] = useState([]);
+
 	const [bookVisible, setBookVisible] = useState(false);
 	const [popupSettings, setPopupSettings] = useState({
 		isVisible: false,
@@ -18,6 +21,12 @@ function App() {
 		isVisible: false,
 		modalData: {},
 	});
+
+	useEffect(() => {
+		GET("/search.php?f=c").then(({ drinks }) => {
+			setDrinkList(() => drinks);
+		});
+	}, []);
 
 	return (
 		<div className="App">
@@ -35,12 +44,14 @@ function App() {
 				<Content
 					category={category}
 					setModalSettings={setModalSettings}
+					drinkList={drinkList}
 				/>
 			)}
 			{bookVisible && (
 				<Book
 					setBookVisible={setBookVisible}
 					setPopupSettings={setPopupSettings}
+					drinkList={drinkList}
 				/>
 			)}
 			{popupSettings.isVisible && (
