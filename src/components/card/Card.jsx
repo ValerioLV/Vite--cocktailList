@@ -17,12 +17,12 @@ const Card = ({ data, setModalSettings }) => {
 				onClick={onHandleImgClick}
 			/>
 			<div className={styles.details}>
-				<ul>
+				<ul className={styles.ingrList}>
 					{ingredientList().map((ingredient) => (
 						<li>{ingredient}</li>
 					))}
 				</ul>
-				<p>{data.strInstructionsIT}</p>
+				<p className={styles.instructions}>{data.strInstructionsIT}</p>
 			</div>
 		</div>
 	);

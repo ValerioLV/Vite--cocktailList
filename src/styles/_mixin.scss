@@ -12,3 +12,14 @@
 	gap: $gap;
 	flex-wrap: $wrap;
 }
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin max-width($width) {
+	max-width: $width;
+	width: 100%;
+	margin: 0 auto;
+}

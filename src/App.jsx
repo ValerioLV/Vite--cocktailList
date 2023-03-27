@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { useState, useEffect } from "react";
 import { GET } from "./utils/get";
 import Header from "./components/header";

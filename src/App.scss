@@ -1,5 +1,8 @@
+@import "./styles/all";
+
 .App {
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	font-family: $font-family-primary;
 }

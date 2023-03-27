@@ -1,8 +1,8 @@
-@import "../../styles/variables";
-@import "../../styles/mixin";
+@import "../../styles/all";
 
 .Card {
-	max-width: 450px;
+	@include max-width($card-width_normal);
+	max-height: $card-height_normal;
 	@include flexContainer(column, center);
 
 	h3 {
@@ -12,8 +12,7 @@
 	}
 
 	img {
-		width: $photo-size_width-normal;
-		height: $photo-size_height-normal;
+		@include size($photo-size_width-normal, $photo-size_height-normal);
 		align-self: center;
 	}
 
@@ -28,11 +27,30 @@
 		padding: 3px 5px 0;
 		border: 1px solid $secondary-color;
 		border-radius: 5px;
+		overflow-y: auto;
 
-		ul,
-		p {
+		.ingrList,
+		.instructions {
 			margin-top: 8px;
 			margin-bottom: 5px;
 		}
+
+		.ingrList {
+			li {
+				font-weight: $font-weight-light;
+				font-size: 0.8rem;
+				text-align: center;
+			}
+		}
+
+		.instructions {
+			font-weight: $font-weight-light;
+		}
+
+		// .ingrList,
+		// .instructions {
+		// margin-top: 8px;
+		// margin-bottom: 5px;
+		// }
 	}
 }
